@@ -94,4 +94,24 @@ public class File implements Data{
         return file_id != null ? file_id.hashCode() : 0;
     }
 
+
+    public static class Attach{
+
+        public Attach(String ref_type, String ref_id) {
+            this.ref_type = ref_type;
+            this.ref_id = ref_id;
+        }
+
+        private final String ref_type;
+        private final String ref_id;
+
+        public String getRef_type() {
+            return ref_type;
+        }
+
+        public String getRef_id() {
+            return ref_id;
+        }
+
+    }
 }
