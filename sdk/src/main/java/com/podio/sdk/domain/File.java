@@ -97,19 +97,19 @@ public class File implements Data{
 
     public static class Attach{
 
-        public Attach(String ref_type, String ref_id) {
+        public Attach(String ref_type, int ref_id) {
             this.ref_type = ref_type;
             this.ref_id = ref_id;
         }
 
         private final String ref_type;
-        private final String ref_id;
+        private final int ref_id;
 
         public String getRef_type() {
             return ref_type;
         }
 
-        public String getRef_id() {
+        public int getRef_id() {
             return ref_id;
         }
 
