@@ -7,6 +7,7 @@ import com.podio.sdk.Request.ErrorListener;
 import com.podio.sdk.Request.SessionListener;
 import com.podio.sdk.androidasynchttp.AndroidAsyncHttpClient;
 import com.podio.sdk.provider.ApplicationProvider;
+import com.podio.sdk.provider.AttachProvider;
 import com.podio.sdk.provider.CalendarProvider;
 import com.podio.sdk.provider.ClientProvider;
 import com.podio.sdk.provider.CommentProvider;
@@ -76,6 +77,11 @@ public class Podio {
      * Enables means of easy operating on the File API end point.
      */
     public static final FileProvider file = new FileProvider();
+
+    /**
+     * Enables means of easy operating on the File attach API end point.
+     */
+    public static final AttachProvider attach = new AttachProvider();
 
     /**
      * Enables means of easy operating on the Item API end point.
@@ -267,6 +273,7 @@ public class Podio {
         contact.setClient(volleytRestClient);
         conversation.setClient(volleytRestClient);
         file.setClient(androidAsyncHttpRestClient);
+        attach.setClient(volleytRestClient);
         item.setClient(volleytRestClient);
         organization.setClient(volleytRestClient);
         user.setClient(volleytRestClient);

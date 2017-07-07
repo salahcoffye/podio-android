@@ -44,7 +44,7 @@ public class AndroidAsyncHttpClient implements Client {
 
     @Override
     public <T> Request<T> request(Request.Method method, Filter filter, Object item, Class<T> classOfResult) {
-        if (filter instanceof FileProvider.FileFilter && method == Request.Method.POST) {
+        if (filter instanceof FileProvider.FileFilter && method == Request.Method.POST && item instanceof File) {
             String url = filter.buildUri(scheme, authority).toString();
             AndroidAsyncHttpRequest<T> request = new AndroidAsyncHttpRequest<>(client, context, url, (File) item, classOfResult);
             request.performRequest();
