@@ -35,7 +35,8 @@ public class AttachProvider extends Provider {
         }
 
         Filter withFileId(long fileId) {
-            addPathSegment(fileId+"/attach");
+            addPathSegment(String.valueOf(fileId));
+            addPathSegment("attach");
             return this;
         }
     }
