@@ -332,11 +332,13 @@ public class Item implements Data {
         }
 
         for (Field field : fields) {
-            if (field != null) {
-                Object data = field.getCreateData();
+            if(!field.getType().name().equals("calculation")){
+                if (field != null) {
+                    Object data = field.getCreateData();
 
-                if (data != null) {
-                    createData.setValues(field.getExternalId(), data);
+                    if (data != null) {
+                        createData.setValues(field.getExternalId(), data);
+                    }
                 }
             }
         }
@@ -358,6 +360,7 @@ public class Item implements Data {
 
                 // Build "createData" objects for each value associated with the current field.
                 for (Field.Value value : values) {
+
                     Map<String, Object> data = value != null ? value.getCreateData() : null;
 
                     if (data != null) {

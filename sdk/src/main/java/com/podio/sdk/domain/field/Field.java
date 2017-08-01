@@ -205,6 +205,7 @@ public abstract class Field<T extends Field.Value> {
             createData = new ArrayList<Map<String, Object>>();
 
             for (T value : values) {
+
                 Map<String, Object> data = value != null ? value.getCreateData() : null;
 
                 if (data != null) {
